@@ -27,4 +27,8 @@ public class UserService {
     public void save(List<User> users) {
         userRepository.save(users);
     }
+    
+//    public User update(User user) {
+//    	return userRepository.update(user);
+//    }
 }

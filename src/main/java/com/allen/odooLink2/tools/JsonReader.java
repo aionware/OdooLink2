@@ -48,7 +48,7 @@ public class JsonReader {
 	    try {
 	      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
 	      String jsonText = readAll(rd);      
-	      System.out.println(jsonText);
+//	      System.out.println(jsonText);
 	      write2File(jsonText);
 	      return jsonText;
 	    } finally {
@@ -70,7 +70,7 @@ public class JsonReader {
   public static void main(String[] args) throws IOException, JSONException {
 //	    JSONObject json = readJsonFromUrl("https://jsonplaceholder.typicode.com/users");
 	    
-	    String json =  url2String("http://192.168.1.224:8080/api/customer/3");
+	    String json =  url2String("http://54.223.173.85:8181/api/customer/3");
 	    write2File(json);
 	  
 //	  InIntell;

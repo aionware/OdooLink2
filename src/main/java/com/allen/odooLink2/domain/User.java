@@ -70,6 +70,23 @@ public class User {
     @Column(name="parent_id")
     @JsonProperty("parent_id")
     private Integer parent_id;
+
+    @Column(name="picking_warn")
+    @JsonProperty("picking_warn")
+    private String picking_warn;
+    
+    @Column(name="invoice_warn")
+    @JsonProperty("invoice_warn")
+    private String invoice_warn;
+    
+    @Column(name="purchase_warn")
+    @JsonProperty("purchase_warn")
+    private String purchase_warn;
+    
+    @Column(name="sale_warn")
+    @JsonProperty("sale_warn")
+    private String sale_warn;
+    
 //    @Embedded
 //    @JsonProperty("address")
 //    private Address address;

@@ -35,18 +35,26 @@ public class JsontodbApplication {
 			mapper.setSerializationInclusion(Include.NON_NULL);
 			TypeReference<List<User>> typeReference = new TypeReference<List<User>>(){};
 //			String url = "http://192.168.1.224:8080/api/customerAll/";
-			String url = "http://54.223.173.85:8181/api/customer/3";
-			String text= new JsonReader().url2String(url);
 			
-			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/temp.json");
+//			for(int i=1;i<10;i++) {
+			  	int i = 22;  	
+				String url = "http://54.223.173.85:8181/api/customer/"+i;
+				String text= new JsonReader().url2String(url);
+				
+				InputStream inputStream = TypeReference.class.getResourceAsStream("/json/temp.json");
+				
+				try {
+					List<User> users = mapper.readValue(inputStream,typeReference);
+					for(int x=0;x<2;x++) {
+						userService.save(users);
+						 Thread.sleep(10000); 
+					}
+					System.out.println("Users Saved!");
+				} catch (IOException e){
+					System.out.println("Unable to save users: " + e.getMessage());
+				}
+//			}
 			
-			try {
-				List<User> users = mapper.readValue(inputStream,typeReference);
-				userService.save(users);
-				System.out.println("Users Saved!");
-			} catch (IOException e){
-				System.out.println("Unable to save users: " + e.getMessage());
-			}
 	    };
 	}
 }
