@@ -87,6 +87,42 @@ public class User {
     @JsonProperty("sale_warn")
     private String sale_warn;
     
+    @Column(name="display_name")
+    @JsonProperty("display_name")
+    private String display_name;
+    
+    @Column(name="use_id")
+    @JsonProperty("user_id")
+    private String user_id;
+    
+    @Column(name="company_id")
+    @JsonProperty("company_id")
+    private Integer company_id;
+    
+    @Column(name="customer")
+    @JsonProperty("customer")
+    private Boolean customer;
+    
+    @Column(name="supplier")
+    @JsonProperty("supplier")
+    private Boolean supplier;
+    
+    @Column(name="employee")
+    @JsonProperty("employee")
+    private Boolean employee;
+    
+    @Column(name="is_company")
+    @JsonProperty("is_company")
+    private Boolean is_company;
+    
+    @Column(name="contact")
+    @JsonProperty("contact")
+    private String contact;
+    
+    @Column(name="write_uid")
+    @JsonProperty("write_uid")
+    private Integer write_uid;
+    
 //    @Embedded
 //    @JsonProperty("address")
 //    private Address address;
@@ -95,4 +131,11 @@ public class User {
 //    private Company company;
 
     public User() {}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + "]";
+	}
+    
+    
 }
